@@ -28,8 +28,16 @@ async function getJoke() {
         } else {
             joke = data.joke;
         }
+        toggleButton();
         textToSpech(joke);
     } catch (error) {
         console.log(error);
     }
 }
+
+function toggleButton() {
+    button.disabled = !button.disabled;
+}
+
+button.addEventListener('click', getJoke);
+audioElement.addEventListener('ended', toggleButton);
