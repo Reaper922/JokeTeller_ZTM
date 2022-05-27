@@ -28,10 +28,8 @@ async function getJoke() {
         } else {
             joke = data.joke;
         }
-        console.log(joke)
+        textToSpech(joke);
     } catch (error) {
         console.log(error);
     }
 }
-
-getJoke();
